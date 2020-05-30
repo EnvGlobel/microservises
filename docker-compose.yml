@@ -3,9 +3,6 @@ version: '3'
 networks:
     main_net:
 
-volumes:
-    redis_data:
-
 services:
     nginx: 
         image: nginx:stable
@@ -44,8 +41,6 @@ services:
         volumes:
             - ./services/cubejs:/usr/src/app
             - /usr/src/app/node_modules
-        depends_on: 
-            - redis
         ports:
             - "4000:4000"
         networks:
@@ -68,14 +63,4 @@ services:
             - "9000"
         networks:
             - main_net
-    
-    redis:
-        image: redis:3.2-alpine
-        restart: always
-        volumes:
-            - redis_data:/data
-        expose:
-            - "6379"
-        networks:
-            - main_net 
     
