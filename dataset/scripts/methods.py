@@ -88,11 +88,16 @@ def distance_between(pos1, pos2):
 
 def main():   
     df = pd.read_csv("../dataset-prueba-coordenadas-trafico.csv") 
-    df.head(5)
+    list_nearest_stations = []
+    for index, dr in df.iterrows():
+        print(index)
+        station = nearest_station({"latitude" : dr['latitud'], "longitude": dr['longitud']})
+        list_nearest_stations.append(station)
 
-    d = distance_between({"lat" : 2, "long": 2.5}, {"lat" : 2, "long": 3})
-    print(f'Distancia => {d["km"]} km')
+    df['nearest_station'] = list_nearest_stations
 
+    #d = distance_between({"lat" : 2, "long": 2.5}, {"lat" : 2, "long": 3})
+    #print(f'Distancia => {d["km"]} km')
 
 
 if __name__ == "__main__":
