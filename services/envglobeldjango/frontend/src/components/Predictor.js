@@ -1,8 +1,18 @@
 import React from 'react';
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
+import { Map, Marker, Circle, Popup, TileLayer } from 'react-leaflet';
+import cubejs from '@cubejs-client/core';
+import { QueryRenderer } from '@cubejs-client/react';
 
 const Predictor = () => {
     const [viewport, setViewport] = React.useState({ center: [40.819732, -73.948239], zoom: 12 });
+
+    // Misc
+
+    const cubejsApi = cubejs(
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyIiwiYXBwSWQiOiIxIiwiaWF0IjoxNTkwODU0ODU4LCJleHAiOjE1OTE3MTg4NTh9.NXb4GP7mNvkdwPJSHDMIrl_8qereqGHuEQfiSVVKMA4',
+        { apiUrl: 'http://localhost:4000/cubejs-api/v1' },
+    );
+
 
     return (
         <Map viewport={viewport} style={{ height: "100%", width: "100%" }}>
@@ -10,6 +20,40 @@ const Predictor = () => {
                 attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
+
+            <QueryRenderer
+                query={{
+                    measures: [],
+                    dimensions: [
+                        "PollutionStation.name",
+                        "PollutionStation.latitude",
+                        "PollutionStation.longitude"
+                    ]
+                }}
+                cubejsApi={cubejsApi}
+                render={({ resultSet }) => {
+                    if (!resultSet) {
+                        return <div>Here goes a map :v</div>;
+                    }
+
+                    return (
+                        <React.Fragment>
+                            {resultSet.tablePivot().map((fila, index) => {
+                                return (
+                                    <React.Fragment>
+                                        <Marker key={index} position={[fila['PollutionStation.latitude'], fila['PollutionStation.longitude']]}>
+                                            <Popup>
+                                                Station: {fila['PollutionStation.name']}
+                                            </Popup>
+                                        </Marker>
+                                        <Circle key={index + "circle"} center={[fila['PollutionStation.latitude'], fila['PollutionStation.longitude']]} radius={(fila['PollutionStation.radius']) ? fila['PollutionStation.latitude'] : 10} color={"#1211ff"} fillColor="#fff" />
+                                    </React.Fragment>
+                                );
+                            })}
+                        </React.Fragment>
+                    );
+                }} />
+            })}
         </Map>
     );
 };
