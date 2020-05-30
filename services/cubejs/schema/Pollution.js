@@ -16,6 +16,11 @@ cube(`Pollution`, {
   },
   
   dimensions: {
+    bp: {
+      sql: `bp`,
+      type: `string`
+    },
+    
     id: {
       sql: `id`,
       type: `number`,
@@ -27,13 +32,13 @@ cube(`Pollution`, {
       type: `string`
     },
     
-    pm10: {
-      sql: `pm10`,
+    rh: {
+      sql: `rh`,
       type: `string`
     },
     
-    pm25: {
-      sql: `pm25`,
+    temp: {
+      sql: `temp`,
       type: `string`
     },
     
