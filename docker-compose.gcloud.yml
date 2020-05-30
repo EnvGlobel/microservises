@@ -3,15 +3,25 @@ version: '3.1'
 
 volumes:
     mysql:
+    redis_data:
+        
 services:
 
-  db:
-    image: mysql
-    command: --default-authentication-plugin=mysql_native_password
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: example
-    ports:
-        - 3306:3306
-    volumes:
-        - mysql:/var/lib/mysql
+    db:
+        image: mysql
+        command: --default-authentication-plugin=mysql_native_password
+        restart: always
+        environment:
+        MYSQL_ROOT_PASSWORD: example
+        ports:
+            - 3306:3306
+        volumes:
+            - mysql:/var/lib/mysql
+
+    redis:
+        image: redis:3.2-alpine
+        restart: always
+        volumes:
+            - redis_data:/data
+        ports:
+            - 6379:6379
