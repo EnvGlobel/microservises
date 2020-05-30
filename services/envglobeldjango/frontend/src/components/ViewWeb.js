@@ -34,7 +34,7 @@ const ViewWeb = (props) => {
                 <List
                     dense={false}
                     subheader={
-                        <ListSubheader color="inherit">Training Django React</ListSubheader>
+                        <ListSubheader color="inherit">EnvGlobel</ListSubheader>
                     }>
                     {props.menuOptions.map((element, index) => {
                         return (
