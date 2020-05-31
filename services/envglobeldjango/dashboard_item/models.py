@@ -1,13 +1,11 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django_mysql.models import JSONField
 
+def my_default():
+    return {'foo': 'bar'}
 
 class DashboardItem(models.Model):
-    viz_state = models.CharField(
-        max_length=100
-    )
-    layout = models.CharField(
-        max_length=100
-    )
-    name = models.CharField(
-        max_length=100
-    )
+    query = JSONField(default=my_default)
+    xs = models.IntegerField(null=True)
+    name = models.CharField(max_length=100)
