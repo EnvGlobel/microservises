@@ -29,7 +29,7 @@ services:
             PYTHONPATH: /api
             PYTHONUNBUFFERED: "True"
             DEBUG: "True"
-        # env_file: .secret
+        env_file: ./services/envglobeldjango/.env
         ports:
             - "8000:8000"
         networks:
