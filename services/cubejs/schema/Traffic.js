@@ -26,12 +26,6 @@ cube(`Traffic`, {
       type: `string`
     },
     
-    id: {
-      sql: `id`,
-      type: `number`,
-      primaryKey: true
-    },
-    
     orange: {
       sql: `orange`,
       type: `string`
@@ -40,6 +34,17 @@ cube(`Traffic`, {
     red: {
       sql: `red`,
       type: `string`
+    },
+
+    station: {
+      sql: `${PollutionStation}.name`,
+      type: `string`
+    },
+    
+    id: {
+      sql: `id`,
+      type: `number`,
+      primaryKey: true
     },
     
     measuredate: {

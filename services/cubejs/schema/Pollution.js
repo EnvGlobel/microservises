@@ -16,15 +16,20 @@ cube(`Pollution`, {
   },
   
   dimensions: {
+    id: {
+      sql: `id`,
+      type: `number`,
+      primaryKey: true
+    },
+    
     bp: {
       sql: `bp`,
       type: `string`
     },
     
-    id: {
-      sql: `id`,
-      type: `number`,
-      primaryKey: true
+    station: {
+      sql: `${PollutionStation}.name`,
+      type: `string`
     },
     
     o3: {
