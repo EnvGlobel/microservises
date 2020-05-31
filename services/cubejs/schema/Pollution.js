@@ -61,6 +61,10 @@ cube(`Pollution`, {
       sql: `${rh}`,
       type: `max`
     },
+    averageVehicleCount: {
+      sql: `${vehicleCount}`,
+      type: `avg`
+    },
   },
   
   dimensions: {

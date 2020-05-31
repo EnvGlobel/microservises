@@ -5,6 +5,7 @@ import ChartRendererBP from './graphs/ChartRendererBP';
 import ChartRendererO3 from './graphs/ChartRendererO3';
 import ChartRendererRH from './graphs/ChartRendererRH';
 import ChartRendererTemp from './graphs/ChartRendererTemp';
+import ChartRendererVehicules from './graphs/ChartRendererVehicules';
 
 
 const cubejsApi = cubejs(
@@ -19,6 +20,7 @@ const Dashboard = () => {
         { elem: <ChartRendererO3 cubejsApi={cubejsApi} />, xs: 3 },
         { elem: <ChartRendererRH cubejsApi={cubejsApi} />, xs: 3 },
         { elem: <ChartRendererTemp cubejsApi={cubejsApi} />, xs: 3 }
+        { elem: <ChartRendererVehicules cubejsApi={cubejsApi} />, xs: 3 }
     ];
 
     return (
