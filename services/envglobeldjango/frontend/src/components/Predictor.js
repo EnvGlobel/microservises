@@ -24,12 +24,20 @@ const Predictor = () => {
 
             <QueryRenderer
                 query={{
-                    measures: ["Pollution.averageO3"],
+                    measures: [
+                        "Pollution.averageO3",
+                        "Pollution.averageBp",
+                        "Pollution.averageTemp",
+                        "Pollution.averageRh"
+                    ],
                     dimensions: [
                         "PollutionStation.name",
                         "PollutionStation.latitude",
                         "PollutionStation.longitude",
-                        "Pollution.o3"
+                        "Pollution.o3",
+                        "Pollution.bp",
+                        "Pollution.rh",
+                        "Pollution.temp"
                     ],
                     timeDimensions: [
                       {
@@ -55,6 +63,12 @@ const Predictor = () => {
                                                 Station: {fila['PollutionStation.name']}
                                                 <br></br>
                                                 O3: {fila['Pollution.averageO3']}
+                                                <br></br>
+                                                BP: {fila['Pollution.averageBp']}
+                                                <br></br>
+                                                Temperatura: {fila['Pollution.averageTemp']}
+                                                <br></br>
+                                                Rh: {fila['Pollution.averageRh']}
                                             </Popup>
                                         </Marker>
                                         <Circle key={index + "circle"} center={[fila['PollutionStation.latitude'], fila['PollutionStation.longitude']]} radius={(fila['PollutionStation.radius']) ? fila['PollutionStation.latitude'] : 10} color={"#1211ff"} fillColor="#fff" />
