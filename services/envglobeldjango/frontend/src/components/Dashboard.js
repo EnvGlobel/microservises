@@ -1,9 +1,11 @@
 import React from 'react';
 import cubejs from '@cubejs-client/core';
 import { Card, CardContent, Grid, Typography } from '@material-ui/core';
-import GraphBar from './graphs/GraphBar';
-import GraphLine from './graphs/GraphLine';
-import ChartRenderer from './graphs/ChartRenderer';
+import ChartRendererBP from './graphs/ChartRendererBP';
+import ChartRendererO3 from './graphs/ChartRendererO3';
+import ChartRendererRH from './graphs/ChartRendererRH';
+import ChartRendererTemp from './graphs/ChartRendererTemp';
+import ChartRendererVehicules from './graphs/ChartRendererVehicules';
 
 
 const cubejsApi = cubejs(
@@ -14,7 +16,11 @@ const cubejsApi = cubejs(
 const Dashboard = () => {
 
     const graphs = [
-        { elem: <ChartRenderer cubejsApi={cubejsApi} />, xs: 12 },
+        { elem: <ChartRendererBP cubejsApi={cubejsApi} />, xs: 3 },
+        { elem: <ChartRendererO3 cubejsApi={cubejsApi} />, xs: 3 },
+        { elem: <ChartRendererRH cubejsApi={cubejsApi} />, xs: 3 },
+        { elem: <ChartRendererTemp cubejsApi={cubejsApi} />, xs: 3 }
+        { elem: <ChartRendererVehicules cubejsApi={cubejsApi} />, xs: 3 }
     ];
 
     return (

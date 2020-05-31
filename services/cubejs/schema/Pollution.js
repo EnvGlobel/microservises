@@ -61,6 +61,10 @@ cube(`Pollution`, {
       sql: `${rh}`,
       type: `max`
     },
+    averageVehicleCount: {
+      sql: `${vehicleCount}`,
+      type: `avg`
+    },
   },
   
   dimensions: {
@@ -72,7 +76,7 @@ cube(`Pollution`, {
     
     bp: {
       sql: `bp`,
-      type: `string`
+      type: `number`
     },
     
     station: {
@@ -82,17 +86,22 @@ cube(`Pollution`, {
     
     o3: {
       sql: `o3`,
-      type: `string`
+      type: `number`
     },
     
     rh: {
       sql: `rh`,
-      type: `string`
+      type: `number`
+    },
+    
+    vehicleCount: {
+      sql: `vehicleCount`,
+      type: `number`
     },
     
     temp: {
       sql: `temp`,
-      type: `string`
+      type: `number`
     },
     
     measuredate: {

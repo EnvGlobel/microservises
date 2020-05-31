@@ -1,14 +1,17 @@
 import React from 'react';
 import { createMuiTheme, Hidden, CircularProgress, ThemeProvider } from '@material-ui/core';
 import { MemoryRouter, Route } from 'react-router-dom';
-const Login = React.lazy(() => import('./Login'));
+// const Login = React.lazy(() => import('./Login'));
 const ViewMobile = React.lazy(() => import('./ViewMobile'));
 const ViewWeb = React.lazy(() => import('./ViewWeb'));
 
 
 const App = () => {
     // Hooks
-    const menuOptions = [{ name: "Dashboard", path: "/dashboard" }, { name: "Interactive Map", path: "/predictor" }];
+    const menuOptions = [
+        { name: "Dashboard", path: "/" },
+        { name: "Interactive Map", path: "/predictor" },
+    ];
     const [option, setOption] = React.useState(menuOptions[0]);
 
     // Misc
@@ -39,7 +42,6 @@ const App = () => {
                                 menuOptions={menuOptions}
                                 setOption={setOption} />
                         </Route>
-                        {/* <Route exact path="/" component={Login} /> */}
                     </React.Suspense>
                 </Hidden>
                 <Hidden only={["sm", "md", "lg", "xl"]}>
@@ -50,7 +52,6 @@ const App = () => {
                                 menuOptions={menuOptions}
                                 setOption={setOption} />
                         </Route>
-                        {/* <Route exact path="/" component={Login} /> */}
                     </React.Suspense>
                 </Hidden>
             </MemoryRouter>
