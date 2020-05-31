@@ -19,6 +19,7 @@ services:
             - main_net
 
     django:
+        image: aquintero446/django:envglobel
         build: 
             context: ./services/envglobeldjango
             dockerfile: Dockerfile
@@ -37,6 +38,7 @@ services:
         networks:
             - main_net
     cubejs:
+        image: aquintero446/cubejs:envglobel
         build: ./services/cubejs
         command: npm run dev
         env_file:
