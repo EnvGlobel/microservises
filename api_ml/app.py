@@ -10,7 +10,7 @@ api = Api(app)
 reg = linear_model.LinearRegression()
 
 # load trained classifier
-reg_path = "D:\\ws\\bk\\globhack\\EnvGlobel\\api_ml\\model-traffic.sav"
+reg_path = "model-traffic.sav"
 with open(reg_path, 'rb') as f:
     reg = pickle.load(f)
 
