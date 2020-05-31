@@ -41,6 +41,12 @@ cube(`Traffic`, {
       type: `string`
     },
     
+    id: {
+      sql: `id`,
+      type: `number`,
+      primaryKey: true
+    },
+    
     measuredate: {
       sql: `${CUBE}.\`measureDate\``,
       type: `time`
