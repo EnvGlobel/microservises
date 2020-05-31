@@ -11,7 +11,7 @@ services:
           - "./static:/static"
         ports:
           - 80:80
-          - 444:443
+          - 443:443
         depends_on:
           - django
           - cubejs
