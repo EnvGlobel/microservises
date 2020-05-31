@@ -1,5 +1,5 @@
 django==3.0.6
-psycopg2
+mysqlclient
 django-debug-toolbar==2.2
 djangorestframework==3.11.0
 markdown
