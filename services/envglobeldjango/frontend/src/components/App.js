@@ -18,6 +18,9 @@ const App = () => {
             secondary: {
                 main: "#b47fa2"
             },
+            action: {
+                selected: "#b47fa2"
+            }
         }
     });
 

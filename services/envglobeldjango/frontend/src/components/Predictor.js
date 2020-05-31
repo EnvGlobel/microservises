@@ -1,4 +1,5 @@
 import React from 'react';
+import { CircularProgress } from '@material-ui/core';
 import { Map, Marker, Circle, Popup, TileLayer } from 'react-leaflet';
 import cubejs from '@cubejs-client/core';
 import { QueryRenderer } from '@cubejs-client/react';
@@ -33,7 +34,7 @@ const Predictor = () => {
                 cubejsApi={cubejsApi}
                 render={({ resultSet }) => {
                     if (!resultSet) {
-                        return <div>Here goes a map :v</div>;
+                        return <CircularProgress style={{ position: "absolute", left: "50%", top: "50%" }} />;
                     }
 
                     return (

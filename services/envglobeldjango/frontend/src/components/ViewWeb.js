@@ -41,11 +41,6 @@ const ViewWeb = (props) => {
                             <ListItem
                                 key={index}
                                 button={true}
-                                style={{
-                                    selected: {
-                                        backgroundColor: "red",
-                                    },
-                                }}
                                 selected={props.selectedOption.name === element.name}
                                 onClick={() => { props.setOption(element); history.replace(element.path) }}>
                                 <ListItemText primary={element.name} />
@@ -55,7 +50,7 @@ const ViewWeb = (props) => {
                 </List>
             </Drawer>
             <Content />
-        </div>
+        </div >
     );
 };
 
