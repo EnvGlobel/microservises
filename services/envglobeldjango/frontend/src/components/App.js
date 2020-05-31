@@ -16,10 +16,12 @@ const App = () => {
                 main: "#232323"
             },
             secondary: {
-                main: "#b47fa2"
+                //main: "#b47fa2"
+                main: "#66de49"
             },
             action: {
-                selected: "#b47fa2"
+                //selected: "#b47fa2"
+                selected: "#66de49"
             }
         }
     });

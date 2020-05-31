@@ -1,5 +1,5 @@
 import React from 'react';
-import { Drawer, List, ListSubheader, ListItem, ListItemText, useTheme } from '@material-ui/core';
+import { Drawer, List, ListSubheader, ListItem, ListItemText, useTheme, Divider } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import Content from './Content';
 
@@ -47,7 +47,16 @@ const ViewWeb = (props) => {
                             </ListItem>
                         )
                     })}
+                    <Divider />
+                    <ListItem
+                        button={true}
+                        selected={true}
+                        onClick={() => { }}
+                    >
+                        <ListItemText primary={element.name} />
+                    </ListItem>
                 </List>
+
             </Drawer>
             <Content />
         </div >
