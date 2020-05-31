@@ -10,9 +10,6 @@ const ViewMobile = (props) => {
     const [menux, setMenux] = React.useState(null);
     let history = useHistory();
 
-    // Misc
-
-
     // Functions
     const openMenu = (event) => {
         setMenux(event.currentTarget);
@@ -22,10 +19,6 @@ const ViewMobile = (props) => {
         setMenux(null);
         props.setOption(element);
     }
-
-    React.useEffect(() => {
-        return (() => { });
-    });
 
     return (
         <React.Fragment>

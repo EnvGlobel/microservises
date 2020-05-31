@@ -1,8 +1,8 @@
 import React from 'react';
 import { CircularProgress } from '@material-ui/core';
 import { Switch, Route } from 'react-router-dom';
-const Dashboard = React.lazy(() => import('./Dashboard'));
 const Predictor = React.lazy(() => import('./Predictor'));
+const Dashboard = React.lazy(() => import('./Dashboard'));
 
 const Content = () => {
     return (

@@ -14,7 +14,7 @@ const cubejsApi = cubejs(
 const Dashboard = () => {
 
     const graphs = [
-        { elem: <ChartRenderer cubejsApi={cubejsApi} />, xs: 12 },
+        { elem: <ChartRenderer cubejsApi={cubejsApi} />, xs: 12 }
     ];
 
     return (

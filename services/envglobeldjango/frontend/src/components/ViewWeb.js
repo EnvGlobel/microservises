@@ -1,5 +1,5 @@
 import React from 'react';
-import { Drawer, List, ListSubheader, ListItem, ListItemText, ListItemIcon, useTheme, Divider } from '@material-ui/core';
+import { Drawer, List, ListSubheader, ListItem, ListItemText, useTheme, Divider } from '@material-ui/core';
 import { Help } from '@material-ui/icons';
 import { useHistory } from 'react-router-dom';
 import Content from './Content';
@@ -47,7 +47,7 @@ const ViewWeb = (props) => {
                                 onClick={() => { props.setOption(element); history.replace(element.path) }}>
                                 <ListItemText primary={element.name} />
                             </ListItem>
-                        )
+                        );
                     })}
                     <Divider style={{ flexGrow: 1 }} />
                     <div style={{ display: "flex", flexDirection: "row" }}>
