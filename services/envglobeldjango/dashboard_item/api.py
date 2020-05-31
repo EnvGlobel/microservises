@@ -11,5 +11,5 @@ class DashboardItemViewset(viewsets.ModelViewSet):
     serializer_class = DashboardItemSerializer
 
     def get_queryset(self):
-        print('self.request', self.request)
-        return self.request.user.dashboards.filter(id=1)
+        dashboard = int(self.request.query_params.get('dashboard'))
+        return self.request.user.dashboards.filter(id=dashboard)
