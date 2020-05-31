@@ -11,7 +11,7 @@ const Predictor = () => {
 
     const cubejsApi = cubejs(
         'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyIiwiYXBwSWQiOiIxIiwiaWF0IjoxNTkwODU0ODU4LCJleHAiOjE1OTE3MTg4NTh9.NXb4GP7mNvkdwPJSHDMIrl_8qereqGHuEQfiSVVKMA4',
-        { apiUrl: 'http://localhost:4000/cubejs-api/v1' },
+        { apiUrl: 'http://34.67.137.54/cubejs-api/v1' },
     );
 
 
