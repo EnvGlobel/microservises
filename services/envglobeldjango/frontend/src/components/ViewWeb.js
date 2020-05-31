@@ -36,7 +36,7 @@ const ViewWeb = (props) => {
                     style={{ display: "flex", flexDirection: "column", height: "100%", padding: 0, margin: 0 }}
                     dense={false}
                     subheader={
-                        <ListSubheader color="inherit">EnvGlobel</ListSubheader>
+                        <ListSubheader color="inherit"><img src="/static/LogoEnvGlobel.png" /></ListSubheader>
                     }>
                     {props.menuOptions.map((element, index) => {
                         return (

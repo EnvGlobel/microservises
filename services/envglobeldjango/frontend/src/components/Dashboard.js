@@ -3,6 +3,7 @@ import cubejs from '@cubejs-client/core';
 import { Card, CardContent, Grid, Typography } from '@material-ui/core';
 import GraphBar from './graphs/GraphBar';
 import GraphLine from './graphs/GraphLine';
+import ChartRenderer from './graphs/ChartRenderer';
 
 
 const cubejsApi = cubejs(
@@ -13,10 +14,7 @@ const cubejsApi = cubejs(
 const Dashboard = () => {
 
     const graphs = [
-        { elem: <GraphLine cubejsApi={cubejsApi} />, xs: 12 },
-        { elem: <GraphBar cubejsApi={cubejsApi} />, xs: 4 },
-        { elem: <GraphBar cubejsApi={cubejsApi} />, xs: 4 },
-        { elem: <GraphBar cubejsApi={cubejsApi} />, xs: 4 },
+        { elem: <ChartRenderer cubejsApi={cubejsApi} />, xs: 12 },
     ];
 
     return (

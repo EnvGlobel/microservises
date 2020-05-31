@@ -9,3 +9,4 @@ class DashboardItem(models.Model):
     query = JSONField(default=my_default)
     xs = models.IntegerField(null=True)
     name = models.CharField(max_length=100)
+    chart_type = models.CharField(max_length=100, null=True)
