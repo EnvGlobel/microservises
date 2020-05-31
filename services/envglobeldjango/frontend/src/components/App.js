@@ -33,24 +33,24 @@ const App = () => {
             <MemoryRouter>
                 <Hidden only={["xs"]}>
                     <React.Suspense fallback={<CircularProgress style={{ position: "absolute", left: "50%", top: "50%" }} />}>
-                        <Route path="/dashboard">
+                        <Route path="/">
                             <ViewWeb
                                 selectedOption={option}
                                 menuOptions={menuOptions}
                                 setOption={setOption} />
                         </Route>
-                        <Route exact path="/" component={Login} />
+                        {/* <Route exact path="/" component={Login} /> */}
                     </React.Suspense>
                 </Hidden>
                 <Hidden only={["sm", "md", "lg", "xl"]}>
                     <React.Suspense fallback={<CircularProgress style={{ position: "absolute", left: "50%", top: "50%" }} />}>
-                        <Route path="/dashboard">
+                        <Route path="/">
                             <ViewMobile
                                 selectedOption={option}
                                 menuOptions={menuOptions}
                                 setOption={setOption} />
                         </Route>
-                        <Route exact path="/" component={Login} />
+                        {/* <Route exact path="/" component={Login} /> */}
                     </React.Suspense>
                 </Hidden>
             </MemoryRouter>
