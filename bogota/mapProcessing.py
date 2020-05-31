@@ -29,10 +29,8 @@ class MapFeatureExtractor:
     def extractFromFile(self, path):
         self.image = self.combineColors(io.imread(path))
         [self.height, self.width] = self.image.shape
-        pass
 
 
 extractor = MapFeatureExtractor()
 extractor.extractFromFile(r"D:\ws\bk\screenshot\2020_4_25_21_59.png")
 features = extractor.countFeatures()
-pass
