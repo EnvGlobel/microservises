@@ -1,3 +1,0 @@
-flask
-flask_restful
-git+git://github.com/consbio/tpkutils.git

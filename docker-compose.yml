@@ -51,16 +51,16 @@ services:
         networks:
             - main_net
 
-    # model_api:
-    #     image: aquintero446/flask:envglobel
-    #     build:
-    #         context: .
-    #         dockerfile: Dockerfile
-    #     ports:
-    #         - 5000:5000
-    #     volumes: 
-    #         - ./services/model_api:/app
-    #     command: python server.py
+    api_ml:
+        image: aquintero446/flask:envglobel
+        build:
+            context: ./services/api_ml
+            dockerfile: Dockerfile
+        ports:
+            - 5000:5000
+        volumes: 
+            - ./services/api_ml:/app
+        command: python app.py
 
     frontend:
         image: frontend:dev
