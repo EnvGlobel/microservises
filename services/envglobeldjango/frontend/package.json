@@ -27,9 +27,12 @@
   "dependencies": {
     "@cubejs-client/core": "^0.19.22",
     "@cubejs-client/react": "^0.19.22",
+    "@date-io/date-fns": "^2.6.2",
     "@material-ui/core": "^4.10.0",
     "@material-ui/icons": "^4.9.1",
+    "@material-ui/pickers": "^3.2.10",
     "axios": "^0.19.2",
+    "date-fns": "^2.14.0",
     "leaflet": "^1.6.0",
     "react-leaflet": "^2.7.0",
     "recharts": "^1.8.5"
