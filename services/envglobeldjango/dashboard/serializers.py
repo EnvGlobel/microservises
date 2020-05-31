@@ -5,5 +5,6 @@ from dashboard.models import Dashboard
 class DashboardSerializer(serializers.ModelSerializer):
     class Meta:
         model = Dashboard
-        fields = '__all__'
+        fields = ('id', 'item')
         read_only_fields = ['id']
+        depth = 1
