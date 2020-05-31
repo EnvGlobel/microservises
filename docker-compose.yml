@@ -11,7 +11,7 @@ services:
           - "./static:/static"
         ports:
           - 80:80
-          - 444:443
+          - 443:443
         depends_on:
           - django
           - cubejs
@@ -51,6 +51,17 @@ services:
         networks:
             - main_net
 
+    model_api:
+        image: aquintero446/flask:envglobel
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - 5000:5000
+        volumes: 
+            - ./services/model_api:/app
+        command: python server.py
+
     frontend:
         image: frontend:dev
         build: 
@@ -67,4 +78,6 @@ services:
             - "9000:9000"
         networks:
             - main_net
+
+    
     
