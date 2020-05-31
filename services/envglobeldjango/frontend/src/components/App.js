@@ -1,7 +1,7 @@
 import React from 'react';
 import { createMuiTheme, Hidden, CircularProgress, ThemeProvider } from '@material-ui/core';
 import { MemoryRouter, Route } from 'react-router-dom';
-const Login = React.lazy(() => import('./Login'));
+// const Login = React.lazy(() => import('./Login'));
 const ViewMobile = React.lazy(() => import('./ViewMobile'));
 const ViewWeb = React.lazy(() => import('./ViewWeb'));
 
