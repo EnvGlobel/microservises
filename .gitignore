@@ -1,3 +1,4 @@
 node_modules/
 *.pyc
 services/envglobeldjango/frontend/static/
+services/envglobeldjango/.env

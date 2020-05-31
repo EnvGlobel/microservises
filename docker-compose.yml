@@ -13,6 +13,7 @@ services:
           - 444:443
         depends_on:
           - django
+          - cubejs
         networks:
             - main_net
 
@@ -28,7 +29,7 @@ services:
             PYTHONPATH: /api
             PYTHONUNBUFFERED: "True"
             DEBUG: "True"
-        # env_file: .secret
+        env_file: ./services/envglobeldjango/.env
         ports:
             - "8000:8000"
         networks:
@@ -56,7 +57,7 @@ services:
             - NODE_ENV=development
             - CHOKIDAR_USEPOLLING=true
         volumes:
-            - ./services/envglobeldjango:/usr/src/app
+            - ./services/envglobeldjango/frontend:/usr/src/app
             - /usr/src/app/node_modules
             # - ./services/django/logs:/root/.npm/_logs
         expose:

@@ -22,18 +22,28 @@ cube(`Pollution`, {
       primaryKey: true
     },
     
+    bp: {
+      sql: `bp`,
+      type: `string`
+    },
+    
+    station: {
+      sql: `${PollutionStation}.name`,
+      type: `string`
+    },
+    
     o3: {
       sql: `o3`,
       type: `string`
     },
     
-    pm10: {
-      sql: `pm10`,
+    rh: {
+      sql: `rh`,
       type: `string`
     },
     
-    pm25: {
-      sql: `pm25`,
+    temp: {
+      sql: `temp`,
       type: `string`
     },
     
