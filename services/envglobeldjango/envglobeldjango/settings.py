@@ -27,7 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'backend',
-    'localhost'
+    'localhost',
+    os.environ.get('HOST')
     ]
 
 
