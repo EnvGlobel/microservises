@@ -1,5 +1,6 @@
 import React from 'react';
-import { Drawer, List, ListSubheader, ListItem, ListItemText, useTheme } from '@material-ui/core';
+import { Drawer, List, ListSubheader, ListItem, ListItemText, ListItemIcon, useTheme, Divider } from '@material-ui/core';
+import { Help } from '@material-ui/icons';
 import { useHistory } from 'react-router-dom';
 import Content from './Content';
 
@@ -32,6 +33,7 @@ const ViewWeb = (props) => {
                     },
                 }}>
                 <List
+                    style={{ display: "flex", flexDirection: "column", height: "100%", padding: 0, margin: 0 }}
                     dense={false}
                     subheader={
                         <ListSubheader color="inherit">EnvGlobel</ListSubheader>
@@ -47,6 +49,25 @@ const ViewWeb = (props) => {
                             </ListItem>
                         )
                     })}
+                    <Divider style={{ flexGrow: 1 }} />
+                    <div style={{ display: "flex", flexDirection: "row" }}>
+                        <ListItem
+                            onClick={() => { }}
+                            button={true}
+                            style={{ width: "80%" }}
+                        >
+                            <ListItemText primary={"Sign In"} />
+                        </ListItem>
+                        <ListItem
+                            onClick={() => { }}
+                            button={true}
+                            style={{ width: "20%" }}
+                            selected={true}
+                            alignItems="center"
+                        >
+                            <Help />
+                        </ListItem>
+                    </div>
                 </List>
             </Drawer>
             <Content />

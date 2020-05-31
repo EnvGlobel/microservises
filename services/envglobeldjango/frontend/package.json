@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development --watch ./src/index.js --output ./static/main.js",
-    "build": "webpack --mode production ./src/index.js --output ./static/main.js",
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -15,6 +15,7 @@
     "@babel/preset-env": "^7.10.1",
     "@babel/preset-react": "^7.10.1",
     "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.5.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -28,6 +29,7 @@
     "@cubejs-client/react": "^0.19.22",
     "@material-ui/core": "^4.10.0",
     "@material-ui/icons": "^4.9.1",
+    "axios": "^0.19.2",
     "leaflet": "^1.6.0",
     "react-leaflet": "^2.7.0",
     "recharts": "^1.8.5"
