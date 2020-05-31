@@ -24,12 +24,20 @@ const Predictor = () => {
 
             <QueryRenderer
                 query={{
-                    measures: [],
+                    measures: ["Pollution.averageO3"],
                     dimensions: [
                         "PollutionStation.name",
                         "PollutionStation.latitude",
-                        "PollutionStation.longitude"
-                    ]
+                        "PollutionStation.longitude",
+                        "Pollution.o3"
+                    ],
+                    timeDimensions: [
+                      {
+                        dimension: "Pollution.measuredate",
+                        dateRange: ["2017-09-23"],
+                        granularity: "day"
+                      }
+                    ],
                 }}
                 cubejsApi={cubejsApi}
                 render={({ resultSet }) => {
@@ -45,6 +53,8 @@ const Predictor = () => {
                                         <Marker key={index} position={[fila['PollutionStation.latitude'], fila['PollutionStation.longitude']]}>
                                             <Popup>
                                                 Station: {fila['PollutionStation.name']}
+                                                <br></br>
+                                                O3: {fila['Pollution.averageO3']}
                                             </Popup>
                                         </Marker>
                                         <Circle key={index + "circle"} center={[fila['PollutionStation.latitude'], fila['PollutionStation.longitude']]} radius={(fila['PollutionStation.radius']) ? fila['PollutionStation.latitude'] : 10} color={"#1211ff"} fillColor="#fff" />
