@@ -1,5 +1,3 @@
 node_modules/
-/static/
 *.pyc
-services/envglobeldjango/frontend/static/*.js
 services/envglobeldjango/.env
