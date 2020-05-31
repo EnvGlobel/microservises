@@ -13,12 +13,6 @@ cube(`PollutionStation`, {
   },
   
   dimensions: {
-    id: {
-      sql: `id`,
-      type: `number`,
-      primaryKey: true
-    },
-    
     latitude: {
       sql: `latitude`,
       type: `string`

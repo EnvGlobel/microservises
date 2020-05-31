@@ -21,10 +21,9 @@ cube(`Pollution`, {
       type: `string`
     },
     
-    id: {
-      sql: `id`,
-      type: `number`,
-      primaryKey: true
+    station: {
+      sql: `${PollutionStation}.name`,
+      type: `string`
     },
     
     o3: {
