@@ -4,3 +4,4 @@ services/envglobeldjango/.env
 services/envglobeldjango/frontend/static/*
 !static/.keep
 static/*
+services/envglobeldjango/frontend/static/*
