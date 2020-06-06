@@ -1,0 +1,47 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "frontend",
+            "image": "aquintero446/envglobel-frontend",
+            "hostname": "frontend",
+            "essential": false,
+            "memory": 128
+        },
+        {
+            "name": "django",
+            "image": "aquintero446/envglobel-django",
+            "hostname": "django",
+            "essential": false,
+            "memory": 128
+        },
+        {
+            "name": "cubejs",
+            "image": "aquintero446/envglobel-cubejs",
+            "hostname": "cubejs",
+            "essential": false,
+            "memory": 128
+        },
+        {
+            "name": "api_ml",
+            "image": "aquintero446/envglobel-api_ml",
+            "hostname": "api_ml",
+            "essential": false,
+            "memory": 128
+        },
+        {
+            "name": "nginx",
+            "image": "aquintero446/envglobel-nginx",
+            "hostname": "nginx",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ],
+            "links": ["frontend", "django", "django", "cubejs", "api_ml"],
+            "memory": 128
+        }
+    ]
+}
