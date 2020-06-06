@@ -1,0 +1,27 @@
+language: generic
+sudo: required
+
+services:
+    - docker
+
+before_install:
+    - docker build -t aquintero446/frontend-test -f ./services/envglobeldjango/frontend/Dockerfile.dev ./services/envglobeldjango/frontend
+
+script:
+    - docker run -e CI=true aquintero446/frontend-test npm run test
+
+after_success:
+    - docker build -t aquintero446/envglobel-frontend ./services/envglobeldjango/frontend
+    - docker build -t aquintero446/envglobel-nginx ./services/nginx
+    - docker build -t aquintero446/envglobel-django ./services/django
+    - docker build -t aquintero446/envglobel-cubejs ./services/cubejs
+    - docker build -t aquintero446/envglobel-api_ml ./services/api_ml
+    # Log in to the docker cli
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+    #Push images to docker hub
+    - docker push aquintero446/envglobel-frontend
+    - docker push aquintero446/envglobel-nginx
+    - docker push aquintero446/envglobel-django
+    - docker push aquintero446/envglobel-cubejs
+    - docker push aquintero446/envglobel-api_ml
+      
